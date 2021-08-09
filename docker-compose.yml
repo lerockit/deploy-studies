@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  api:
+    image: lerockit/deploy-studies-api-dev
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/app/src

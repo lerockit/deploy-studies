@@ -1,4 +1,4 @@
-FROM node:latest AS dev
+FROM node:latest
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN yarn
 
 COPY . .
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
 
 FROM node:latest AS prod
 
@@ -25,3 +25,4 @@ RUN yarn
 COPY . .
 
 CMD ["yarn", "start"]
+
