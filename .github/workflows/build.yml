@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Testing Echo Secret
-        run: echo ${{ secrets.SECRET_TEST }}
+        run: echo ${{ secrets.SECRET_TES }}
 
       # - name: Cache dependencies
       #   id: yarn-cache-dir-path
