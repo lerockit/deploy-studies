@@ -1,11 +1,11 @@
-name: Build and Push API Docker Image
+name: Build and Push front Docker Image
 
 on:
   workflow_dispatch:
   push:
 
 jobs:
-  build-api-images:
+  build-front-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,17 +18,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Push Dev Image to Docker Hub
+      - name: Push Image to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./api/
+          context: ./front/
           push: true
-          tags: lerockit/deploy-studies-api-dev
-
-      - name: Push Prod Image to Docker Hub
-        uses: docker/build-push-action@v2
-        with:
-          context: ./api/
-          target: prod
-          push: true
-          tags: lerockit/deploy-studies-api-prod
+          tags: lerockit/deploy-studies-front-prod
