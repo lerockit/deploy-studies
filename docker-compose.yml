@@ -5,5 +5,7 @@ services:
     image: lerockit/deploy-studies-api-dev
     ports:
       - 8000:8000
-    volumes:
-      - ./src:/app/src
+  front:
+    image: lerockit/deploy-studies-front-prod
+    ports:
+      - 3000:3000
